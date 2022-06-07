@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:munit="http://www.mulesoft.org/schema/mule/munit"
+	xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<munit:config name="1wayssl-test-suite.xml" />
+	<munit:test name="1wayssl-test-suite-1waysslFlowclientTest" doc:id="3bae7510-0d7e-4763-8edf-e5d9e1c1e17d" description="Test">
+		<munit:behavior >
+			<http:request method="GET" doc:name="Request" doc:id="ac8c662e-782e-4cd1-867f-a3ca90473908" config-ref="HTTP_Request_configuration" path="/ddd"/>
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to 1waysslFlowclient" doc:id="66fd6ab4-c215-4602-bcb4-c277b04e982e" name="1waysslFlowclient"/>
+		</munit:execution>
+	</munit:test>
+
+
+</mule>
